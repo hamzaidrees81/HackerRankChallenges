@@ -54,8 +54,8 @@ public class PalindromeMerge {
         //count characters and store
         Map<Character, Integer> map = new HashMap<>();
 
-        countCharacters(s1, map);
-        countCharacters(s2, map);
+        updateCharactersCountMap(s1, map);
+        updateCharactersCountMap(s2, map);
 
         makePalindrome(map);
 
@@ -97,7 +97,7 @@ public class PalindromeMerge {
 
     }
 
-    private void countCharacters(String s1, Map<Character, Integer> map) {
+    private void updateCharactersCountMap(String s1, Map<Character, Integer> map) {
         for(Character c: s1.toCharArray())
         {
             map.computeIfPresent(c, (key,val) -> val+1);
